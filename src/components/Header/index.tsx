@@ -1,19 +1,36 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import './styles.css'
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
+import UserService from "../../services/UserService";
 
 export const Header = () => {
-    const isAuthorized = true;
+    const location = useLocation();
+    const [isAuthorized, setAuthorized] = useState(false);
+    const logOut = () => {
+        UserService.logout();
+    };
+    useEffect(() => {
+        setAuthorized(Boolean(UserService.isAuthorized()));
+    }, [location]);
     return (
         <header className="header">
-            <span className="logo">Логотип</span>
+            <Link className="logo" to="/">
+                Логотип
+            </Link>
             {
-                isAuthorized && (
+                isAuthorized ? (
                     <nav className="navigation">
                         <Link to="/">Главная</Link>
-                        <Link to="/tasks">Задания</Link>
+                        <Link to="/profile">Профиль</Link>
+                        <Link to="/shop">Каталог</Link>
                         <Link to="/transfer">Перевести баллы</Link>
+                        <Link to="/auth" onClick={logOut}>Выйти</Link>
+                    </nav>
+                ) : (
+                    <nav className="navigation">
+                        <Link to="/auth">Войти</Link>
+                        <Link to="/register">Создать аккаунт</Link>
                     </nav>
                 )
             }

@@ -1,0 +1,26 @@
+.transfer-item {
+    margin: 10px 0;
+    width: 320px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.transfer-item-title {
+    margin-bottom: 8px;
+}
+
+.present {
+    background: #D5F5DA;
+}
+
+.purchase {
+    background: #E5E5E5;
+}
+
+.transfer {
+    background: #d3d7f5;
+}
+
+.transfer-item-title {
+    margin-top: 0;
+}

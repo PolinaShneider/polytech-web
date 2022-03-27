@@ -3,8 +3,12 @@ import {Input} from "@alfalab/core-components/input";
 import {Button} from "@alfalab/core-components/button";
 
 import './styles.css'
+import UserService from "../../services/UserService";
+import {useNavigate} from "react-router";
 
 export const LoginForm = () => {
+    const navigate = useNavigate();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -19,8 +23,15 @@ export const LoginForm = () => {
                 break;
         }
     };
-    const submitForm = () => {
-        console.log('submit');
+    const submitForm = async () => {
+        const result = await UserService.login({
+            email,
+            password,
+        });
+
+        if (result) {
+            navigate('/profile');
+        }
     };
     return (
         <>

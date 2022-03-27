@@ -1,0 +1,21 @@
+.select-field {
+    color: #A9A9A9;
+    border: 1px solid #000000;
+    background: #fff;
+    width: 467px;
+    margin-bottom: 20px;
+}
+
+.transfer-title {
+    margin-bottom: 20px;
+}
+
+.transfers {
+    display: flex;
+    justify-content: space-between;
+}
+
+:root {
+    --form-control-bg-color: white;
+    --select-option-hover-background: white;
+}
