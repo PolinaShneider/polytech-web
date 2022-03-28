@@ -49,7 +49,8 @@ export const Shop = () => {
                         <div className="product" key={key}>
                             <h3 className="product-title">{item.title}</h3>
                             <p>{item.description}</p>
-                            <div>{item.price} баллов</div>
+                            <img width="100%" src={item.image}/>
+                            <div className="product-price">{item.price} баллов</div>
                             <Button className="button product-button"
                                     onClick={() => buyProduct(item.id)}>Купить</Button>
                         </div>

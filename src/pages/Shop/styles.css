@@ -22,6 +22,10 @@
     font-weight: 700;
 }
 
+.product-price {
+    margin-top: 10px;
+}
+
 .product-button {
     margin-top: 20px;
 }

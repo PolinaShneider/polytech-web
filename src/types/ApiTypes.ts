@@ -10,9 +10,10 @@ export type UserWithBalance = UserSchema & {
 };
 
 export interface Product {
-    title: string,
-    description: string,
-    price: number,
+    title: string;
+    description: string;
+    image: string;
+    price: number;
     id: string;
     updatedAt: string;
     createdAt: string;
